@@ -6,13 +6,6 @@
 (async () => {
   'use strict';
 
-  console.log(defaultCountry);
-  console.log(myAuth)
-  console.log(defaultCurrency);
-  console.log(suportedPaymentMethods);
-  console.log(stripe);
-  console.log(baseUrl);
-
   /**
    * Reference the main form
    */

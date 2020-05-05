@@ -106,6 +106,9 @@
   // Submit handler for our payment form.
   form.addEventListener('submit', async event => {
     event.preventDefault();
+    // setTimeout("location.href = 'thank-you.html';",5000);
+    // window.location.replace("thank-you.html");
+
 
     // Retrieve the selected product options from the form.
     let selection = form.querySelector('input[name=option]:checked').value;
@@ -269,6 +272,8 @@
         } else {
 
           console.log("Processo concluído! (outros métodos de pagamento)")
+          redirectPost(data.id);
+
         }
 
       })
@@ -295,8 +300,19 @@
 
     fetch(url, requestOptions)
       .then(response => response.json())
-      .then(result => console.log('Payment status: ', result.message))
-      .catch(error => console.log('Error', error));
+      .then(result => {
+        console.log('Payment status: ', result.message);
+        redirectPost(orderId);
+      })
+      .catch(error => {
+        console.log('Error', error);
+        redirectPost(orderId);
+      })
+  };
+
+  // Redirect to thank you page after completed submission
+  const redirectPost = (data) => {
+    window.location.replace("thank-you.html?id=" + btoa(data));
   };
 
 

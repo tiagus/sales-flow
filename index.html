@@ -18,6 +18,104 @@
       <div id="checkout">
         <form id="payment-form" method="POST" >
         <!-- <form id="payment-form" method="POST" action="/orders"> -->
+
+
+          <div class="discount-step">
+          <div class="select">
+              <h2>STEP 1: SELECT QUANTITY</h2>
+
+
+          </div>
+
+
+
+              <div id="op-one" class="product-quantity steps  row" >
+                <div class="col-xs-1 col-sm-1 col-md-1 b-1 quantity">
+                  <div class="cb_circle "></div>
+                  <input type="radio" name="option" value="one" checked>
+                </div>
+                <div class="inner col-xs-6 col-sm-6 col-md-7 left col-product col-product-1">
+                  <!-- Used to display right side info -->
+                </div>
+                <div class="inner col-xs-5 col-sm-5 col-md-4 right">
+                  <!-- Used to display right side info -->
+                </div>
+              </div>
+
+              <div id="op-two" class="product-quantity steps  row" >
+                <div class="col-xs-1 col-sm-1 col-md-1 b-1 quantity">
+                  <div class="cb_circle "></div>
+                  <input type="radio" name="option" value="two" >
+                </div>
+                <div class="inner col-xs-6 col-sm-6 col-md-7 left col-product col-product-1">
+                  <!-- Used to display right side info -->
+                </div>
+                <div class="inner col-xs-5 col-sm-5 col-md-4 right">
+                  <!-- Used to display right side info -->
+                </div>
+              </div>
+
+              <div id="op-three" class="product-quantity steps  row" >
+                <div class="col-xs-1 col-sm-1 col-md-1 b-1 quantity">
+                  <div class="cb_circle "></div>
+                  <input type="radio" name="option" value="three" >
+                </div>
+                <div class="inner col-xs-6 col-sm-6 col-md-7 left col-product col-product-1">
+                  <!-- Used to display right side info -->
+                </div>
+                <div class="inner col-xs-5 col-sm-5 col-md-4 right">
+                  <!-- Used to display right side info -->
+                </div>
+              </div>
+
+
+              <div id="op-four" class="product-quantity steps active row">
+                  <div class="col-xs-1 col-sm-1 col-md-1 b-1 quantity">
+                    <div class="cb_circle "></div>
+                    <input type="radio" name="option" value="four" >
+                  </div>
+                  <div class="inner col-xs-6 col-sm-6 col-md-7 left col-product col-product-1">
+                      <span><b>BEST SELLER</b><br></span>                <span>6 EasyEggs<br></span>
+                      <span style="font-size: 12px; font-weight: 700; color: #009432; text-transform: uppercase;">(60% discount already applied)<br></span>
+                  </div>
+                  <div class="inner col-xs-5 col-sm-5 col-md-4 right">
+                      <span>
+                          <strong>                    <span class="col-price" data-price="29" data-symbol="€">
+                              29 €                    </span>
+                          </strong>                </span><br>
+                      <span><strong>                    Shipping Included
+                          </strong>                </span>
+                  </div>
+                              <img src="https://checkout.shopeasyeggs.com/checkout/themes/preloader/images/red-arrow.png" alt="" class="red-arrow">
+                          </div>
+
+
+              <div id="op-five" class="product-quantity steps  row">
+                  <div class="col-xs-1 col-sm-1 col-md-1 b-1 quantity">
+                    <div class="cb_circle "></div>
+                    <input type="radio" name="option" value="five" >
+                  </div>
+                  <div class="inner col-xs-6 col-sm-6 col-md-7 left col-product col-product-1">
+                                      <span>12 EasyEggs<br></span>
+                      <span style="font-size: 12px; font-weight: 700; color: #009432; text-transform: uppercase;">(73% discount already applied)<br></span>
+                  </div>
+                  <div class="inner col-xs-5 col-sm-5 col-md-4 right">
+                      <span>
+                                              <span class="col-price" data-price="39" data-symbol="€">
+                              39 €                    </span>
+                                          </span><br>
+                      <span>                    Shipping Included
+                                          </span>
+                  </div>
+                          </div>
+
+
+          </div>
+
+
+
+
+
           <section>
             <h2>Shipping &amp; Billing Information</h2>
             <fieldset class="with-state">
@@ -117,7 +215,9 @@
               <fieldset>
                 <label>
                   <span>Cartão</span>
-                  <div id="card-element" class="field"></div>
+                  <div id="card-element" class="field">
+                    <!-- A Stripe Element will be inserted here. -->
+                  </div>
                 </label>
               </fieldset>
             </div>
@@ -135,8 +235,8 @@
           </section>
           <button class="payment-button btn btn-danger" type="submit">Paga Essa Merda! JÁ!!!</button>
         </form>
+        <!-- Used to display form errors. -->
         <div id="card-errors" class="element-errors"></div>
-        <div id="iban-errors" class="element-errors"></div>
       </div>
     </main>
     <!-- Stripe.js v3 for Elements -->

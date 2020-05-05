@@ -16,6 +16,31 @@
 
 
   /**
+   * Display product information on the form
+   */
+
+  // Option One Card Display Text
+  form.querySelector("#op-one > .left").innerHTML = `${op.one.displayBest} ${op.one.displayName} ${op.one.displayPromo}`;
+  form.querySelector("#op-one > .right").innerHTML = `${op.one.displayPrice} ${op.one.displayShipping}`;
+
+  // Option Two Card Display Text
+  form.querySelector("#op-two > .left").innerHTML = `${op.two.displayBest} ${op.two.displayName} ${op.two.displayPromo}`;
+  form.querySelector("#op-two > .right").innerHTML = `${op.two.displayPrice} ${op.two.displayShipping}`;
+
+  // Option Three Card Display Text
+  form.querySelector("#op-three > .left").innerHTML = `${op.three.displayBest} ${op.three.displayName} ${op.three.displayPromo}`;
+  form.querySelector("#op-three > .right").innerHTML = `${op.three.displayPrice} ${op.three.displayShipping}`;
+
+  // Option Four Card Display Text
+  form.querySelector("#op-four > .left").innerHTML = `${op.four.displayBest} ${op.four.displayName} ${op.four.displayPromo}`;
+  form.querySelector("#op-four > .right").innerHTML = `${op.four.displayPrice} ${op.four.displayShipping}`;
+
+  // Option Five Card Display Text
+  form.querySelector("#op-five > .left").innerHTML = `${op.five.displayBest} ${op.five.displayName} ${op.five.displayPromo}`;
+  form.querySelector("#op-five > .right").innerHTML = `${op.five.displayPrice} ${op.five.displayShipping}`;
+
+
+  /**
    * Setup Stripe Elements.
    */
 
@@ -82,6 +107,33 @@
   form.addEventListener('submit', async event => {
     event.preventDefault();
 
+    // Retrieve the selected product options from the form.
+    let selection = form.querySelector('input[name=option]:checked').value;
+
+    // Update product choice based on the users selection
+    switch (selection) {
+      case 'one':
+        selection = op.one;
+        console.log("Option one");
+        break;
+      case 'two':
+        selection = op.two;
+        console.log("Option two");
+        break;
+      case 'three':
+        selection = op.three;
+        console.log("Option three");
+        break;
+      case 'four':
+        selection = op.four;
+        console.log("Option four");
+        break;
+      case 'five':
+        selection = op.five;
+        console.log("Option five");
+        break;
+    };
+
     // Retrieve the user information from the form.
     const payment = form.querySelector('input[name=payment]:checked').value;
     const country = form.querySelector('select[name=country] option:checked')
@@ -113,12 +165,11 @@
         postcode: form.querySelector('input[name=postcode]').value,
         country: country
       },
-      "line_items": [
+      line_items: [
           {
-            "product_id":13458,
-            "quantity": 1,
-            "total":"20",
-          "price":"20"
+            product_id: selection.product_id,
+            quantity: selection.quantity,
+            total: selection.total
           }
         ]
     };
@@ -250,15 +301,6 @@
 
 
   /**
-   * Falta-me lidar com a porra dos produtos!!!!!
-   */
-
-
-
-
-
-
-  /**
    * Display the relevant payment methods for a selected country.
    */
 
@@ -352,9 +394,6 @@
       form
         .querySelector('.payment-info.cod')
         .classList.toggle('visible', payment === 'cod');
-      // form
-      //   .querySelector('.payment-info.redirect')
-      //   .classList.toggle('visible', flow === 'redirect');
       form
         .querySelector('.payment-info.multibanco')
         .classList.toggle('visible', payment === 'multibanco');

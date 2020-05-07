@@ -1,32 +1,205 @@
 <!DOCTYPE html>
 <html lang="pt">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- My Icon -->
+    <link rel="icon" type="image/png" sizes="104x80" href="/images/logo.png">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- My CSS -->
+    <link rel="stylesheet" type="text/css" href="/stylesheets/thank-you.css">
+    <title>Thank You!</title>
+  </head>
+  <body>
+    <div id="loader" class="center"></div>
 
-<head>
-  <title>Thank You</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/png" sizes="104x80" href="/images/logo.png">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="/stylesheets/store.css">
-</head>
-
-<body>
-  <main id="main" class="loading">
-    <header class="header">
-      <a class="shop" href="/">Checkout de Demo</a>
+    <header class="header bg-white py-3 border-bottom">
+      <div class="text-center logo">
+        <img class="header-logo img-fluid" alt="Logo" src="/images/logo.png">
+      </div>
     </header>
-    <div id="checkout">
+
+    <main class="container border my-5 p-0">
+
+      <section class="container bg-info py-4 px-3 px-md-5" id="head">
+        <div class="row text-white">
+          <div class="col text-center">
+            <h2>Obrigado, <span id="firsName">...</span> 🙏</h2>
+            <p>É com muito gosto que lhe informamos que a sua encomenda foi recebida
+              e ficou registada com o número <span id="orderNumber">...</span>.
+              Já de seguida vamos enviar-lhe um email de confirmação para o endereço:
+              <span id="email">...</span> . Mais uma vez, obrigado pela sua encomenda.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="container bg-white py-4 px-md-5" id="multibanco" style="display: none;">
+        <div class="row">
+          <div class="col-12">
+            <p>Como escolheu pagar por Referência Multibanco, a sua encomenda está
+              pendente a aguardar pagamento.</p>
+            <p>Pode efetuar o pagamento de várias formas:</p>
+            <ul>
+              <li>Através da APP do seu Banco para Telemóvel ou Tablet (mais rápido),</li>
+              <li>Através do site do seu Banco se tiver acesso (mais rápido),</li>
+              <li>Ou em qualquer caixa de Multibanco. Mais lento, implica ir à rua 😉</li>
+            </ul>
+            <p>Lembre-se… Quanto mais depressa fizer o pagamento, mais depressa
+              enviamos a encomenda e mais depressa chega às suas mãos 🤔</p>
+            <div class="row justify-content-center">
+              <div class="col" style="max-width: 480px;">
+                <div class="card text-center">
+                  <div class="card-header">
+                    <img class="img-fluid" src="/images/multibanco_banner.png" alt="Referência Multibanco">
+                  </div>
+                  <div class="card-body">
+                    <div class="row mb-1">
+                      <div class="col">
+                        <h6>Entidade:</h6>
+                      </div>
+                      <div class="col">
+                        <h6><span id="mb-ent">...</span></h6>
+                      </div>
+                    </div>
+                    <div class="row mb-1">
+                      <div class="col">
+                        <h6>Referência:</h6>
+                      </div>
+                      <div class="col">
+                        <h6><span id="mb-ref">...</span></h6>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col">
+                        <h6>Valor:</h6>
+                      </div>
+                      <div class="col">
+                        <h6><span id="mb-val">...</span></h6>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-footer text-muted">
+                    O talão emitido pela máquina Multibanco faz prova de pagamento.
+                    Conserve-o.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="container bg-white py-4 px-md-5" id="order">
+        <table class="table border">
+          <thead>
+            <tr class="bg-light">
+              <th scope="col" colspan="2">
+                <span class="h4">Resumo da encomenda</span>
+                <span class="h6 text-muted" id="date">...</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <span class="h6" id="product">...</span>
+                <strong><span id="quantity"></span>...</strong>
+              </td>
+              <th scope="row" class="text-right">
+                <del class="h6 text-muted"><span id="subtotal">...</span></del>
+                <span class="h5" id="total">...</span>
+              </th>
+            </tr>
+            <tr>
+              <td>
+                <h6>Portes de envio</h6>
+              </td>
+              <th scope="row" class="text-right">
+                <span class="h5" id="shipping">...</span>
+              </th>
+            </tr>
+            <tr>
+              <td>
+                <h6>Método de pagamento</h6>
+              </td>
+              <th scope="row" class="text-right">
+                <h6><span id="method">...</span></h6>
+              </th>
+            </tr>
+            <tr class="bg-light">
+              <td>
+                <h5>Total</h5>
+              </td>
+              <th scope="row" class="text-right">
+                <span class="h5" id="order-total">...</span>
+              </th>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="container bg-white py-4 px-md-5" id="last">
+        <div class="card text-dark text-center bg-warning" >
+        <div class="card-header px-1 py-3 p-sm-5">
+          <span class="h3 card-title">
+            <span class="h2">😍 </span>WOW poupou
+            <span id="discount">...</span>!!!
+            <span class="h2"> 😍</span>
+          </span>
+        </div>
+        <div class="card-body px-1 py-4 p-sm-5" id="last-share">
+          <h4 class="card-text">Partilhe e ganhe 10% de desconto em todas as suas
+            futuras encomendas!
+          </h4>
+          <button id="btn_shareFB"><i></i><span>Share</span></button>
+          <button id="btn_shareTWI"><i></i><span>Tweet</span></button>
+        </div>
+        <div class="card-body px-1 py-4 p-sm-5" id="last-coupon" style="display: block;">
+          <h4 class="card-text">Use e abuse do cupão abaixo para ter 10% de desconto
+            em todas as suas futuras encomendas!
+          </h4>
+          <h2 class="container text-success mt-4" id="coupon-code" style="max-width: 250px;">
+            <strong>DISCOTEN</strong>
+          </h2>
+          <a href="..." target="_blanc"
+            class="h3 btn btn-success btn-lg mt-4" role="button" id="coupon-button">
+            Pode usar agora mesmo 😉</a>
+        </div>
+      </section>
 
 
 
 
-    </div>
-  </main>
-  <!-- Stripe.js v3 for Elements -->
-  <script src="https://js.stripe.com/v3/"></script>
-  <!-- App -->
-  <script src="/javascripts/config.js"></script>
-  <script src="/javascripts/show.js"></script>
-</body>
 
+<!--<a target="_blank" href="https://easyeggs.club/sharer/sharer.php?u=https%3A%2F%2Fcheckout.easyeggs.club%3Futm_source%3Dfbshare"
+class="fb-xfbml-parse-ignore" onclick="showCoupon();">
+<img src="EasyEggs%20Thank%20You%20Page_ficheiros/facebook-icon-share.svg" alt="" height="24"></a>-->
+
+
+
+
+
+    </main>
+    <footer>
+
+
+
+
+    </footer>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <!-- Stripe.js v3 for Elements -->
+    <script src="https://js.stripe.com/v3/"></script>
+    <!-- App -->
+    <script src="/javascripts/config.js"></script>
+    <script src="/javascripts/show.js"></script>
+
+  </body>
 </html>
+
+

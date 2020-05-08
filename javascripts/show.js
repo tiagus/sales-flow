@@ -69,18 +69,79 @@
       };
 
       // Populate order section with data
-      document.querySelector("#date").innerHTML = "(" + data.date_created + ")";
+      let date = new Date(data.date_created);
+      date = date.toLocaleDateString("pt-PT",{year: 'numeric', month: 'numeric', day: 'numeric'});
+      document.querySelector("#date").innerHTML = "(" + date + ")";
       document.querySelector("#product").innerHTML = data.line_items[0].name;
       document.querySelector("#quantity").innerHTML = "x " + data.line_items[0].quantity;
       document.querySelector("#subtotal").innerHTML = data.line_items[0].subtotal + "€";
       document.querySelector("#total").innerHTML = data.line_items[0].total + "€";
-      document.querySelector("#shipping").innerHTML = data.shipping_total + "€";
+      document.querySelector("#shipping").innerHTML =
+        data.shipping_total < 1 ? 'Grátis!' : data.shipping_total + "€";
       document.querySelector("#method").innerHTML = data.payment_method_title;
       document.querySelector("#order-total").innerHTML = data.total + "€";
 
-      // Populate last section with data
-      document.querySelector("#discount").innerHTML = data.discount_total + "€";
+      // Populate Discount section with data
+      document.querySelector("#discount-total").innerHTML = data.discount_total + "€";
       document.querySelector("#coupon-button").href = masterStore;
+
+
+      /**
+       * Social media sharing implementation
+       */
+
+      // Popup specific for facebook since it's strange on a full page
+      let width = 600, height = 600;
+      let left = (window.innerWidth - width) / 2;
+      let top = (window.innerHeight - height) / 2;
+      let opts = 'width=' + width + ',height=' + height + ',top=' + top +',left=' + left;
+
+      // Facebook
+      document.querySelector("#share-fb").onclick = () => {
+        window.open('https://www.facebook.com/sharer/sharer.php?u=' +
+                    shareUrl + '&quote=' + shareMsg, 'popup', opts);
+        showCoupon()
+      };
+
+      // Pinterest
+      document.querySelector("#share-pin").onclick = () => {
+        window.open('http://pinterest.com/pin/create/button/?url=' +
+                    shareUrl + '&media=' + pinImg + '&description=' + shareMsg);
+        showCoupon()
+      };
+
+      // Watsapp
+      document.querySelector("#share-wats").onclick = () => {
+        let params = encodeURI(shareUrl);
+        window.open('whatsapp://send?text=' + shareMsg + params);
+        showCoupon()
+      };
+
+      // Facebook Massenger
+      document.querySelector("#share-messenger").onclick = () => {
+        window.open('fb-messenger://share/?link=' + shareUrl + '&quote=' + shareMsg);
+        showCoupon()
+      };
+
+      // Telegram
+      document.querySelector("#share-telegram").onclick = () => {
+        window.open('https://t.me/share/url?url=' + shareUrl + '&text=' + shareMsg);
+        showCoupon()
+      };
+
+      // Populate Shipping section with data
+      document.querySelector("#first_name").innerHTML = data.billing.first_name;
+      document.querySelector("#last_name").innerHTML = data.billing.last_name;
+      document.querySelector("#address_1").innerHTML = data.billing.address_1;
+      document.querySelector("#address_2").innerHTML = data.billing.address_2;
+      document.querySelector("#postcode").innerHTML = data.billing.postcode;
+      document.querySelector("#city").innerHTML = data.billing.city;
+      document.querySelector("#country").innerHTML = data.billing.country;
+      document.querySelector("#phone").innerHTML = data.billing.phone;
+      document.querySelector("#email").innerHTML = data.billing.email;
+
+
+
 
       console.log("Document Ready State:", document.readyState)
 
@@ -100,40 +161,6 @@
 
 
 
-$(document).ready(function() {
-
-      var width  = 575,
-        height = 400,
-        left   = ($(window).width()  - width)  / 2,
-        top    = ($(window).height() - height) / 2,
-        url    = 'https://www.googl.com',
-        opts   = 'status=1' +
-                 ',width='  + width  +
-                 ',height=' + height +
-                 ',top='    + top    +
-                 ',left='   + left;
-
-$("#btn_shareFB").click(function() {
-         window.open(       'https://www.facebook.com/sharer/sharer.php?u='+url,
-        'facebook-share-dialog',
-        opts);
-        showCoupon()
-});
-$("#btn_shareTWI").click(function() {
-         window.open(       'https://twitter.com/share?text=Share%20with%20twitter%20is%20so%20easy',
-        'twitter-sahre-dialog',
-        opts);
-         showCoupon()
-});
-
-});
-
-
-
-
-
-
-
 
 
 
@@ -141,7 +168,7 @@ $("#btn_shareTWI").click(function() {
 
 
 const showCoupon = () => {
-  document.querySelector("#last-share").style.display = "none";
-  document.querySelector("#last-coupon").style.display = "block";
+  document.querySelector("#discount-share").style.display = "none";
+  document.querySelector("#discount-coupon").style.display = "block";
 
 };

@@ -1,3 +1,9 @@
+/* General */
+
+p {
+  font-size: 17px;
+}
+
 /* Loader */
 
 #loader {
@@ -31,4 +37,18 @@
 }
 #coupon-button {
   font-size: x-large;
+}
+
+/* Footer Menu */
+#footerList span {
+  display: none;
+}
+
+@media only screen and (min-width : 768px) {
+  #footerList li {
+    display: inline;
+  }
+  #footerList span {
+    display: inline;
+  }
 }

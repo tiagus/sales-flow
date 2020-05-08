@@ -2,27 +2,33 @@
 <html lang="pt">
   <head>
     <!-- Required meta tags -->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="...">
+    <meta name="robots" content="noindex,nofollow,noarchive,nosnippet,noydir,noodp">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="content-language" content="pt">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="HandheldFriendly" content="true">
     <!-- My Icon -->
-    <link rel="icon" type="image/png" sizes="104x80" href="/images/logo.png">
+    <link rel="icon" type="image/png" sizes="104x80" href="/images/logo2.png">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <!-- My CSS -->
     <link rel="stylesheet" type="text/css" href="/stylesheets/thank-you.css">
-    <title>Thank You!</title>
+    <title>...</title>
   </head>
   <body>
     <div id="loader" class="center"></div>
 
     <header class="header bg-white py-3 border-bottom">
-      <div class="text-center logo">
-        <img class="header-logo img-fluid" alt="Logo" src="/images/logo.png">
-      </div>
+    <!-- Header partial will be rendered here -->
     </header>
 
     <main class="container border my-5 p-0">
-
       <section class="container bg-info py-4 px-3 px-md-5" id="head">
         <div class="row text-white">
           <div class="col text-center">
@@ -34,7 +40,6 @@
           </div>
         </div>
       </section>
-
       <section class="container bg-white py-4 px-md-5" id="multibanco" style="display: none;">
         <div class="row">
           <div class="col-12">
@@ -50,47 +55,52 @@
               enviamos a encomenda e mais depressa chega às suas mãos 🤔</p>
             <div class="row justify-content-center">
               <div class="col" style="max-width: 480px;">
-                <div class="card text-center">
-                  <div class="card-header">
-                    <img class="img-fluid" src="/images/multibanco_banner.png" alt="Referência Multibanco">
-                  </div>
-                  <div class="card-body">
-                    <div class="row mb-1">
-                      <div class="col">
+                <table class="table border">
+                  <thead>
+                    <tr class="bg-light">
+                      <th class="text-center" colspan="2">
+                        <img class="img-fluid" src="/images/multibanco_banner.png" alt="Referência Multibanco">
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="text-center">
                         <h6>Entidade:</h6>
-                      </div>
-                      <div class="col">
-                        <h6><span id="mb-ent">...</span></h6>
-                      </div>
-                    </div>
-                    <div class="row mb-1">
-                      <div class="col">
+                      </td>
+                      <td class="text-center">
+                        <span class="h6" id="mb-ent">...</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">
                         <h6>Referência:</h6>
-                      </div>
-                      <div class="col">
-                        <h6><span id="mb-ref">...</span></h6>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col">
+                      </td>
+                      <td class="text-center">
+                        <span class="h6" id="mb-ref">...</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">
                         <h6>Valor:</h6>
-                      </div>
-                      <div class="col">
-                        <h6><span id="mb-val">...</span></h6>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="card-footer text-muted">
-                    O talão emitido pela máquina Multibanco faz prova de pagamento.
-                    Conserve-o.
-                  </div>
-                </div>
+                      </td>
+                      <td class="text-center">
+                        <span class="h6" id="mb-val">...</span>
+                      </t>
+                    </tr>
+                    <tr class="bg-light text-muted text-center">
+                      <td colspan="2">
+                        <p>O talão emitido pela máquina Multibanco faz prova de pagamento.
+                          Conserve-o.</p>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
             </div>
           </div>
         </div>
       </section>
-
       <section class="container bg-white py-4 px-md-5" id="order">
         <table class="table border">
           <thead>
@@ -105,10 +115,10 @@
             <tr>
               <td>
                 <span class="h6" id="product">...</span>
-                <strong><span id="quantity"></span>...</strong>
+                <strong><span id="quantity">...</span></strong>
               </td>
               <th scope="row" class="text-right">
-                <del class="h6 text-muted"><span id="subtotal">...</span></del>
+                <del class="p text-muted"><span id="subtotal">...</span></del>
                 <span class="h5" id="total">...</span>
               </th>
             </tr>
@@ -125,7 +135,7 @@
                 <h6>Método de pagamento</h6>
               </td>
               <th scope="row" class="text-right">
-                <h6><span id="method">...</span></h6>
+                <span class="h6" id="method">...</span>
               </th>
             </tr>
             <tr class="bg-light">
@@ -139,55 +149,107 @@
           </tbody>
         </table>
       </section>
-
-      <section class="container bg-white py-4 px-md-5" id="last">
+      <section class="container bg-white py-4 px-md-5" id="discount">
         <div class="card text-dark text-center bg-warning" >
-        <div class="card-header px-1 py-3 p-sm-5">
-          <span class="h3 card-title">
-            <span class="h2">😍 </span>WOW poupou
-            <span id="discount">...</span>!!!
-            <span class="h2"> 😍</span>
-          </span>
-        </div>
-        <div class="card-body px-1 py-4 p-sm-5" id="last-share">
-          <h4 class="card-text">Partilhe e ganhe 10% de desconto em todas as suas
-            futuras encomendas!
-          </h4>
-          <button id="btn_shareFB"><i></i><span>Share</span></button>
-          <button id="btn_shareTWI"><i></i><span>Tweet</span></button>
-        </div>
-        <div class="card-body px-1 py-4 p-sm-5" id="last-coupon" style="display: block;">
-          <h4 class="card-text">Use e abuse do cupão abaixo para ter 10% de desconto
-            em todas as suas futuras encomendas!
-          </h4>
-          <h2 class="container text-success mt-4" id="coupon-code" style="max-width: 250px;">
-            <strong>DISCOTEN</strong>
-          </h2>
-          <a href="..." target="_blanc"
-            class="h3 btn btn-success btn-lg mt-4" role="button" id="coupon-button">
-            Pode usar agora mesmo 😉</a>
+          <div class="card-header px-1 py-3 p-sm-3">
+            <span class="h3 card-title">
+              <span class="h2">😍 </span>WOW poupou
+              <span id="discount-total">...</span>!!!
+              <span class="h2"> 😍</span>
+            </span>
+          </div>
+          <div class="card-body px-1 py-4 p-sm-5" id="discount-share">
+            <h4 class="card-text">Partilhe e ganhe 10% de desconto em todas as suas
+              futuras encomendas!
+            </h4>
+            <a href="..." target="_blank" id="share-fb">
+              <img src="/images/share-buttons/facebook.png" alt="Facebook" width="50px">
+            </a>
+            <a href="..." target="_blank" id="share-pin">
+              <img src="/images/share-buttons/pinterest.png" alt="Facebook" width="50px">
+            </a>
+            <a href="..." target="_blank" id="share-wats">
+              <img src="/images/share-buttons/watsapp.png" alt="Facebook" width="50px">
+            </a>
+            <a href="..." target="_blank" id="share-messenger">
+              <img src="/images/share-buttons/facebook-messenger.png" alt="Facebook" width="50px">
+            </a>
+            <a href="..." target="_blank" id="share-telegram">
+              <img src="/images/share-buttons/telegram.png" alt="Facebook" width="50px">
+            </a>
+          </div>
+          <div class="card-body px-1 py-4 p-sm-5" id="discount-coupon" style="display: none;">
+            <h4 class="card-text">Use e abuse do cupão abaixo para ter 10% de desconto
+              em todas as suas futuras encomendas!
+            </h4>
+            <h2 class="container text-success mt-4 py-3" id="coupon-code" style="max-width: 250px;">
+              <strong>DISCOTEN</strong>
+            </h2>
+            <a href="..." target="_blank"
+              class="h3 btn btn-success btn-lg mt-4" role="button" id="coupon-button">
+              Pode usar agora mesmo 😉</a>
+          </div>
         </div>
       </section>
-
-
-
-
-
-<!--<a target="_blank" href="https://easyeggs.club/sharer/sharer.php?u=https%3A%2F%2Fcheckout.easyeggs.club%3Futm_source%3Dfbshare"
-class="fb-xfbml-parse-ignore" onclick="showCoupon();">
-<img src="EasyEggs%20Thank%20You%20Page_ficheiros/facebook-icon-share.svg" alt="" height="24"></a>-->
-
-
-
-
-
+      <section class="container bg-white py-4 px-md-5" id="shipping">
+        <div class="row justify-content-center">
+          <div class="col" style="max-width: 480px;">
+            <div class="card">
+              <h4 class="card-header">Detalhes de envio</h4>
+              <div class="card-body">
+                <p>
+                  <span id="first_name">tiago</span>
+                  <span id="last_name">santos</span>
+                </p>
+                <p id="address_1">rua major correia leite</p>
+                <p id="address_2">lote 11 murtal</p>
+                <p>
+                  <span class="p" id="postcode">2775-084</span>
+                  <span class="p" id="city">parede</span>
+                  <span class="p" id="country">pt</span>
+                </p>
+                <p>
+                  <i class="fas fa-phone"></i>
+                  <span id="phone">917010242</span>
+                </p>
+                <p>
+                  <i class="fas fa-envelope"></i>
+                  <span id="email">tsantos.fs@gmail.com</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row mt-3">
+          <div class="col">
+            <h6 class="font-weight-bold">Precisa de alterar a sua morada de envio?</h6>
+            <p>Clique <a class="text-primary text-decoration-none font-weight-bold"
+                        href="contact-us" target="blank">aqui</a>
+              para alterar a sua morada. Por favor, entenda que só tem 24 horas para
+              o fazer, depois disso a sua encomenda será processada automáticamente.</p>
+          </div>
+        </div>
+      </section>
+      <section class="container bg-white pb-5 px-md-5 " id="support">
+        <div class="row flex-row my-3 pt-5 border-top">
+          <div class="col-3 col-sm-2 align-items-center">
+            <img class="rounded-circle img-fluid" src="/images/contact-icon.jpg">
+          </div>
+          <div class="col-9 col-sm-10">
+            <h4>Estamos aqui para ajudar</h4>
+            <p>Não hesite em contactar o nosso
+              <a class="text-primary text-decoration-none font-weight-bold"
+              href="contact-us" >apoio ao clinte</a>
+              caso tiver algum comentário ou preocupação sobre o seu pedido.</p>
+          </div>
+        </div>
+      </section>
     </main>
-    <footer>
 
-
-
-
+    <footer class="header bg-white py-3 border-top">
+    <!-- Footer partial will be rendered here -->
     </footer>
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
@@ -195,8 +257,11 @@ class="fb-xfbml-parse-ignore" onclick="showCoupon();">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <!-- Stripe.js v3 for Elements -->
     <script src="https://js.stripe.com/v3/"></script>
+    <!-- FontAwesome -->
+    <script src="https://kit.fontawesome.com/ba66ec69a6.js" crossorigin="anonymous"></script>
     <!-- App -->
     <script src="/javascripts/config.js"></script>
+    <script src="/javascripts/includes.js"></script>
     <script src="/javascripts/show.js"></script>
 
   </body>

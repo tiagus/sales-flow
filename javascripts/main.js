@@ -72,7 +72,7 @@
    */
 
   // Create a Card Element and pass some custom styles to it.
-  const card = elements.create('card', {style});
+  const card = elements.create('card', {hidePostalCode: true, style});
 
   // Mount the Card Element on the page.
   card.mount('#card-element');

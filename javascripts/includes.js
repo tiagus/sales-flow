@@ -1,4 +1,4 @@
-fetch("./partials/header.html")
+fetch("../partials/header.html")
   .then(response => {
     return response.text()
   })
@@ -6,7 +6,7 @@ fetch("./partials/header.html")
     document.querySelector("header").innerHTML = data;
   });
 
-fetch("./partials/footer.html")
+fetch("../partials/footer.html")
   .then(response => {
     return response.text()
   })

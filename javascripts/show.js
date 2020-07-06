@@ -20,7 +20,7 @@
    * Fetch the order from the store.
    */
 
-  let url = baseUrl + 'orders/' + 14679; //atob(orderId);
+  let url = baseUrl + 'orders/' + atob(orderId);
 
   let myHeaders = new Headers();
   myHeaders.append("Authorization", myAuth);
